@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      // Compilation
+      {
+        "label": "make",
+        "type": "shell",
+        "command": "cd build && cmake `clsdk-cmake-args` .. && make -j",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "options": {
+            "statusbar": {
+                "label" : "$(diff-insert) Build",
+                "tooltip": "CMake build"
+            }
+        }
+      },
+      {
+        "label": "make and test",
+        "type": "shell",
+        "command": "cd build && cmake `clsdk-cmake-args` .. && make -j && ctest -V",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "options": {
+            "statusbar": {
+                "label" : "$(diff-insert) Build and test",
+                "tooltip": "CMake build and invoke Cltester"
+            }
+        }
+      }
+    ]
+  }
+  
