@@ -9,23 +9,23 @@ namespace contract_name
 
     namespace actions
     {
-        using contract_class1 = class1_contract;
-        using contract_class2 = class2_contract;
+        using contract_c1 = class1_contract;
+        using contract_c2 = class2_contract;
 
-        using sayhi = eosio::action_wrapper<"sayhi"_h, &contract_class1::sayhi, contract_account>;
-        using sayhialice = eosio::action_wrapper<"sayhialice"_h, &contract_class1::sayhialice, contract_account>;
+        using sayhi = eosio::action_wrapper<"sayhi"_h, &contract_c1::sayhi, contract_account>;
+        using sayhialice = eosio::action_wrapper<"sayhialice"_h, &contract_c1::sayhialice, contract_account>;
 
-        using action1 = eosio::action_wrapper<"action1"_h, &contract_class2::action1, contract_account>;
-        using action2 = eosio::action_wrapper<"action2"_h, &contract_class2::action2, contract_account>;
+        using action1 = eosio::action_wrapper<"action1"_h, &contract_c2::action1, contract_account>;
+        using action2 = eosio::action_wrapper<"action2"_h, &contract_c2::action2, contract_account>;
 
         template <typename F>
         void for_each_action(F&& f)
         {
-            f("sayhi"_h, eosio::action_type_wrapper<&contract_class1::sayhi>{}, sayhi_ricardian);
-            f("sayhialice"_h, eosio::action_type_wrapper<&contract_class1::sayhialice>{}, sayhialice_ricardian, "someone");
+            f("sayhi"_h, eosio::action_type_wrapper<&contract_c1::sayhi>{}, sayhi_ricardian);
+            f("sayhialice"_h, eosio::action_type_wrapper<&contract_c1::sayhialice>{}, sayhialice_ricardian, "someone");
 
-            f("action1"_h, eosio::action_type_wrapper<&contract_class2::action1>{}, action1_ricardian);
-            f("action2"_h, eosio::action_type_wrapper<&contract_class2::action2>{}, action2_ricardian, "someone");
+            f("action1"_h, eosio::action_type_wrapper<&contract_c2::action1>{}, action1_ricardian);
+            f("action2"_h, eosio::action_type_wrapper<&contract_c2::action2>{}, action2_ricardian, "someone");
         }
 
         inline bool eosio_apply(uint64_t receiver, uint64_t code, uint64_t action)
