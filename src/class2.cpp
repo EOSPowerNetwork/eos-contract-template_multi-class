@@ -8,8 +8,7 @@ using namespace eosio;
 using std::string;
 using namespace contract_name;
 
-class2_contract::class2_contract(name receiver, name code, datastream<const char*> ds) 
-    : contract(receiver, code, ds)
+class2_contract::class2_contract(name receiver, name code, datastream<const char*> ds) : contract(receiver, code, ds)
 {
     /* NOP */
 }
