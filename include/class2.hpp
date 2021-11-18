@@ -22,11 +22,10 @@ namespace contract_name
        public:
         using contract::contract;
 
-        class2_contract(name receiver, name code, datastream<const char*> ds) : contract(receiver, code, ds)
-        { /* NOP */
-        }
+        class2_contract(name receiver, name code, datastream<const char*> ds);
 
         void action1();
+
         void action2(const name& someone);
 
         using Schema1Table = eosio::multi_index<"schema1"_n, Schema1>;
