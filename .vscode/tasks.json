@@ -5,7 +5,7 @@
       {
         "label": "make",
         "type": "shell",
-        "command": "cd build && cmake `clsdk-cmake-args` .. && make -j",
+        "command": "cd build && cmake `clsdk-cmake-args` .. && make -j $(nproc)",
         "group": {
           "kind": "build",
           "isDefault": true
@@ -20,7 +20,7 @@
       {
         "label": "make and test",
         "type": "shell",
-        "command": "cd build && cmake `clsdk-cmake-args` .. && make -j && ctest -V",
+        "command": "cd build && cmake `clsdk-cmake-args` .. && make -j $(nproc) && ctest -V",
         "group": {
           "kind": "build",
           "isDefault": true
