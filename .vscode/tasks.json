@@ -31,6 +31,21 @@
                 "tooltip": "CMake build and invoke Cltester"
             }
         }
+      },
+      {
+        "label": "test",
+        "type": "shell",
+        "command": "cd build && ctest -V",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "options": {
+            "statusbar": {
+                "label" : "$(diff-insert) Test",
+                "tooltip": "Invoke Cltester"
+            }
+        }
       }
     ]
   }
