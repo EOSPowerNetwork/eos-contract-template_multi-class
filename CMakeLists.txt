@@ -116,7 +116,7 @@ target_link_libraries(${TEST_PROJ} cltestlib-debug)
 enable_testing()
 add_test(
     NAME ${PROJ}_TEST
-    COMMAND cltester -v ${TEST_PROJ}.wasm -s
+    COMMAND cltester -v ${ARTIFACTS_DIR}/${TEST_PROJ}.wasm -s
 )
 
 # These symlinks help keep absolute paths outside of the files in .vscode/

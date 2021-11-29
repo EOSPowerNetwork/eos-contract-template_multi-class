@@ -11,7 +11,7 @@ using namespace eosio;
 void setup_installMyContract(test_chain& t)
 {
     t.create_code_account(contract_name::contract_account);
-    t.set_code(contract_name::contract_account, "contract_name.wasm");
+    t.set_code(contract_name::contract_account, "artifacts/contract_name.wasm");
 }
 
 // Setup function to add some accounts to the chain
