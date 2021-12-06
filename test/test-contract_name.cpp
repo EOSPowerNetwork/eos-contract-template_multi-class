@@ -79,7 +79,7 @@ void setup_fundUsers(test_chain& t)
     }
 }
 
-TEST_CASE("Short description of first test")
+TEST_CASE("Short description of first test", "[suite1]")
 {
     // This starts a single-producer chain
     test_chain t;
@@ -105,7 +105,7 @@ TEST_CASE("Short description of first test")
 
 }  // First test
 
-TEST_CASE("Short description of second test")
+TEST_CASE("Short description of second test", "[suite2]")
 {
     // This starts a single-producer chain
     test_chain t;
